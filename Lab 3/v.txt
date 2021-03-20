@@ -1,0 +1,69 @@
+;; main program begins here
+main
+        MOV R0, #0x0000000a
+        MOV R1, #0x00000005
+        MOV R5, R0
+        MOV R6, R1
+        BL Mul8b
+        MOV R2, R7
+loop:
+        B loop
+
+Mul8b:
+repete_mult
+        ADD R7, R7, R5
+        SUB R6, R6, #1
+        CBZ R6, back_to_mult
+        B repete_mult
+back_to_mult
+        BX LR
+
+Div8b:
+        CBZ R1, back_to_div
+        MOV R5, R0
+        MOV R6, R3
+        MOV R7, #0
+repete_div
+        CMP R7, R1
+        BHI back_to_div
+        ADD R3, R3, #1;; incrementa em 1 R3
+        MOV R6, R3;; passa o valor de R3 para R6
+        BL Mul8b;; atualiza o valor de R7
+        B repete_div
+back_to_div
+        SUB R3, R3, #1;; R3 sai somado de um da logica
+        MOV R6, R3;; passa o valor para R6 para multiplciar
+        BL Mul8b;; chama a multiplicacao so para att R7
+        SUBS R4, R1, R7
+        BX LR
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+##### bkp muiltiplicacao
+
+;; main program begins here
+main
+        MOV R0, #0x0000000a
+        MOV R1, #0x00000005
+        MOV R5, R0
+        MOV R6, R1
+        BL Mul8b
+loop:
+        B loop
+
+Mul8b:
+repete_mult
+        ADD R7, R7, R5
+        SUB R6, R6, #1
+        CBZ R6, back_to_mult
+        B repete_mult
+back_to_mult
+        BX LR
