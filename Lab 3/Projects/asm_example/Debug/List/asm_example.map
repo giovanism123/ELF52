@@ -1,21 +1,29 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.50.9.278/W32 for ARM                  19/Mar/2021  23:49:29
+# IAR ELF Linker V8.50.9.278/W32 for ARM                  22/Mar/2021  00:01:03
 # Copyright 2007-2020 IAR Systems AB.
 #
 #    Output file  =
-#        C:\Users\Usuário\Desktop\Facul\Micro\praticas\pratica_3\Projects\asm_example\Debug\Exe\asm_example.out
+#        C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
+#        microcontrolados\Labs\ELF52\Lab
+#        3\Projects\asm_example\Debug\Exe\asm_example.out
 #    Map file     =
-#        C:\Users\Usuário\Desktop\Facul\Micro\praticas\pratica_3\Projects\asm_example\Debug\List\asm_example.map
+#        C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
+#        microcontrolados\Labs\ELF52\Lab
+#        3\Projects\asm_example\Debug\List\asm_example.map
 #    Command line =
-#        -f C:\Users\USURIO~2\AppData\Local\Temp\EW32F1.tmp
-#        (C:\Users\Usuário\Desktop\Facul\Micro\praticas\pratica_3\Projects\asm_example\Debug\Obj\asm.o
-#        --no_out_extension -o
-#        C:\Users\Usuário\Desktop\Facul\Micro\praticas\pratica_3\Projects\asm_example\Debug\Exe\asm_example.out
-#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
-#        --map
-#        C:\Users\Usuário\Desktop\Facul\Micro\praticas\pratica_3\Projects\asm_example\Debug\List\asm_example.map
-#        --config "D:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        -f C:\Users\Giovani\AppData\Local\Temp\EWA30A.tmp
+#        ("C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
+#        microcontrolados\Labs\ELF52\Lab
+#        3\Projects\asm_example\Debug\Obj\asm.o" --no_out_extension -o
+#        "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
+#        microcontrolados\Labs\ELF52\Lab
+#        3\Projects\asm_example\Debug\Exe\asm_example.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
+#        microcontrolados\Labs\ELF52\Lab
+#        3\Projects\asm_example\Debug\List\asm_example.map" --config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.4\arm\CONFIG\generic_cortex.icf" --semihosting --no_library_search
 #        --entry __iar_program_start --vfe --text_out locale)
 #
@@ -44,10 +52,10 @@ No sections matched the following patterns:
   .intvec   ro code          0x0   0x40  asm.o [1]
                           - 0x40   0x40
 
-"P1":                              0x5e
-  .text     ro code         0x40   0x5c  asm.o [1]
-  .text     ro code         0x9c    0x2  asm.o [1]
-                          - 0x9e   0x5e
+"P1":                              0x64
+  .text     ro code         0x40   0x62  asm.o [1]
+  .text     ro code         0xa2    0x2  asm.o [1]
+                          - 0xa4   0x64
 
 "P2":                             0x400
   CSTACK             0x2000'0000  0x400  <Block>
@@ -58,7 +66,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-         0x9e     0x7'ffff  0x7'ff62
+         0xa4     0x7'ffff  0x7'ff5c
   0x2000'0400  0x2000'ffff    0xfc00
 
 
@@ -73,14 +81,14 @@ command line/config:
     --------------------------------
     Total:
 
-C:\Users\Usuário\Desktop\Facul\Micro\praticas\pratica_3\Projects\asm_example\Debug\Obj: [1]
-    asm.o               158
+C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab 3\Projects\asm_example\Debug\Obj: [1]
+    asm.o               164
     --------------------------------
-    Total:              158
+    Total:              164
 
     Linker created             1'024
 ------------------------------------
-    Grand Total:        158    1'024
+    Grand Total:        164    1'024
 
 
 *******************************************************************************
@@ -95,9 +103,9 @@ __iar_program_start         0x41        Code  Gb  asm.o [1]
 __vector_table               0x0        Data  Gb  asm.o [1]
 
 
-[1] = C:\Users\Usuário\Desktop\Facul\Micro\praticas\pratica_3\Projects\asm_example\Debug\Obj
+[1] = C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab 3\Projects\asm_example\Debug\Obj
 
-    158 bytes of readonly  code memory
+    164 bytes of readonly  code memory
   1'024 bytes of readwrite data memory
 
 Errors: none

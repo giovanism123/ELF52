@@ -10,58 +10,85 @@
         
 __iar_program_start
 
-;; R5, R6 são usados para realizar a operação de multiplicação - input da funcao
-;; R7 é usado para armazenar a resposta da multiplicação - return da funcao
+
+
+
+;;------------------------------------------------------------------------------
+;;
+;; Entradas:
 ;; R0 - Entrada do numerador
 ;; R1 - Entrada do denomonador
+;;
+;; Respostas:
 ;; R2 - R0*R1
 ;; R3 - R0/R1
-;; R4 - R0%R1
+;; R4 - resto R0/R1
+;;
+;; Obs:
+;; R6, R7 e R9 não usados internamente na função de multiplicação,
+;; como entrada 1, entrada 2 e resultado, sucessivamente
+;; Foi feito desta forma, pois com o intuíto de economizar memória de programa, 
+;; a divisão foi feita usando a lógica invertida da multiplicação.
+;; Porém essa decisão NÃO resulta no melhor processamento possível.
 
-;; main program begins here
 main
-        MOV R0, #0x0000000b
-        MOV R1, #0x00000005
-        MOV R5, R1
-        MOV R6, R0
+        MOV R0, #0x00000001
+        MOV R1, #0x00000004
+        MOV R6, R1
+        MOV R7, R0
         BL Mul8b
-        MOV R2, R7
+        MOV R2, R9
         BL Div8b
 loop:
         B loop
 
+
+
+;; Multiplicação
 Mul8b:
-        MOV R7, #0
-repete_mult
-        ADD R7, R7, R5
-        SUB R6, R6, #1
-        CBZ R6, back_to_mult
-        B repete_mult
-back_to_mult
+        MOV R9, #0
+        CBZ R7, return_mult
+doWhile_mult
+        ADD R9, R9, R6
+        SUB R7, R7, #1
+        CBZ R7, return_mult
+        B doWhile_mult
+return_mult
         BX LR
 
+
+;; Divisão 
 Div8b:
-        CBZ R1, back_to_div
-        MOV R5, R1
-        MOV R6, R3
-        MOV R7, #0
-repete_div
-        CMP R7, R0
-        BHI back_to_div
-        ADD R3, R3, #1  ;; incrementa em 1 R3
-        MOV R6, R3      ;; passa o valor de R3 para R6
+        CBZ R1, return_invalid_div
+        MOV R6, R1
+        MOV R7, R3
+        MOV R9, #0
+doWhile_div
+        CMP R9, R0
+        BHI return_div
+        ADD R3, R3, #1
+        MOV R7, R3
         PUSH {LR}
-        BL Mul8b        ;; atualiza o valor de R7
+        BL Mul8b
         POP {LR}
-        B repete_div
-back_to_div
-        SUB R3, R3, #1  ;; R3 sai somado de um da logica
-        MOV R6, R3      ;; passa o valor para R6 para multiplciar
-        PUSH {LR}       ;; salva o valor do PC antes de executar a funcao para nao perder a ref
-        BL Mul8b        ;; chama a multiplicacao so para att R7
-        POP {LR}         ;; consome o valor de PC que estava na pilha para retomar o ponto de inicio
-        SUBS R4, R0, R7
-        BX LR           ;; retorna para ponto de origem
+        B doWhile_div
+return_div
+        SUB R3, R3, #1
+        MOV R7, R3
+        PUSH {LR}
+        BL Mul8b
+        POP {LR}
+        SUBS R4, R0, R9
+        BX LR
+return_invalid_div
+        BX LR
+        
+        
+        
+        
+;;------------------------------------------------------------------------------        
+        
+        
 
         ;; Forward declaration of sections.
         SECTION CSTACK:DATA:NOROOT(3)
