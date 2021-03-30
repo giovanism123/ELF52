@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\settings\asm_example.Debug.general.xcl" --backend -f "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\settings\asm_example.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\settings\asm_example.Debug.general.xcl" --backend -f "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\settings\asm_example.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\settings\asm_example.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\settings\asm_example.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\settings\asm_example.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\settings\asm_example.Debug.driver.xcl" 
 
 @echo off 
 :end

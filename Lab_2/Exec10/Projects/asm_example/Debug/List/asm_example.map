@@ -1,24 +1,24 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.50.9.278/W32 for ARM                  23/Mar/2021  16:06:53
+# IAR ELF Linker V8.50.9.278/W32 for ARM                  29/Mar/2021  22:10:53
 # Copyright 2007-2020 IAR Systems AB.
 #
 #    Output file  =
 #        C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\Debug\Exe\asm_example.out
+#        microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\Debug\Exe\asm_example.out
 #    Map file     =
 #        C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\Debug\List\asm_example.map
+#        microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\Debug\List\asm_example.map
 #    Command line =
-#        -f C:\Users\Giovani\AppData\Local\Temp\EW4161.tmp
+#        -f C:\Users\Giovani\AppData\Local\Temp\EW782A.tmp
 #        ("C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\Debug\Obj\asm.o"
+#        microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\Debug\Obj\asm.o"
 #        --no_out_extension -o "C:\Users\Giovani\Desktop\Sexto Período
 #        CT\Sistemas
-#        microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\Debug\Exe\asm_example.out"
+#        microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\Debug\Exe\asm_example.out"
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\Debug\List\asm_example.map"
+#        microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\Debug\List\asm_example.map"
 #        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.4\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
 #        --no_library_search --entry __iar_program_start --vfe --text_out
@@ -48,10 +48,10 @@ No sections matched the following patterns:
   .intvec   ro code          0x0    0x40  asm.o [1]
                           - 0x40    0x40
 
-"P1":                               0x3a
-  .text     ro code         0x40    0x38  asm.o [1]
-  .text     ro code         0x78     0x2  asm.o [1]
-                          - 0x7a    0x3a
+"P1":                               0x2c
+  .text     ro code         0x40    0x2a  asm.o [1]
+  .text     ro code         0x6a     0x2  asm.o [1]
+                          - 0x6c    0x2c
 
 "P2":                             0x8000
   CSTACK             0x2000'0000  0x8000  <Block>
@@ -62,7 +62,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-         0x7a     0xf'ffff  0xf'ff86
+         0x6c     0xf'ffff  0xf'ff94
   0x2000'8000  0x2003'ffff  0x3'8000
 
 
@@ -77,14 +77,14 @@ command line/config:
     --------------------------------
     Total:
 
-C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\Debug\Obj: [1]
-    asm.o               122
+C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\Debug\Obj: [1]
+    asm.o               108
     --------------------------------
-    Total:              122
+    Total:              108
 
     Linker created            32'768
 ------------------------------------
-    Grand Total:        122   32'768
+    Grand Total:        108   32'768
 
 
 *******************************************************************************
@@ -99,9 +99,9 @@ __iar_program_start         0x41        Code  Gb  asm.o [1]
 __vector_table               0x0        Data  Gb  asm.o [1]
 
 
-[1] = C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\EK-TM4C1294_SM_IAR8-main\Projects\asm_example\Debug\Obj
+[1] = C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab_2\Exec10\Projects\asm_example\Debug\Obj
 
-     122 bytes of readonly  code memory
+     108 bytes of readonly  code memory
   32'768 bytes of readwrite data memory
 
 Errors: none

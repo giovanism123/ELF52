@@ -13,41 +13,34 @@ __iar_program_start
 
 
 
-
-
+;;A ideia deste programa é decompor o segundo fator em potências de 2
+;; ex: 11 = b1011 => 2^3 + 2^1 + 2^0
+;; o valor do fator deslocado n vezes para a esquerda é o mesmo que fazer fator^n
+;; Somando os valores dos deslocamentos, quando houver carry = 1, podemos chegar ao resultado da multiplicação de R0*R1
+;; Entradas R0 * R1 = 
+;; Saída R2
         ;; main program begins here
-main    MOV R0, #0xCDFE
-        MOVT R0,#0x89AB
-        MOV R1, #0x4567
-        MOVT R1, #0x0123
-        MOV R2, #0x4321
-        MOVT R2, #0x8765
-        MOV R3, #0xCBA9
-        MOVT R3, #0x0FED
-        
-        ;;                  R1      R0
-        ;; valor 1 = 0x0123 4567_89AB CDFE = 0123456789ABCDFE
-        ;; valor 2 = 0x0FED CBA9_8765 4321 = 0FEDCBA987654321
-        ;;                  R3        R2
+main    MOV R0, #20
+        MOV R1, #25
+        BL Mul16b
+        B Loop
 
-
-        ;;valor1+valor2=
-
-
-        SUBS R4, R0, R2
-        SBCS R5, R1, R3
-        
-        MOV R5, #4
-        MOV R4, #5
-        
-        CMP R5, R4
-        ITE GE
-        MOVGE R7, #2
-        MOVLT R7, #4
-        
-
-loop    
-        B       loop            ; go to loop
+Mul16b:
+        PUSH {R1}
+deslocamento
+        CMP R1, #0 ;quando R1 = 0, não há o que deslocar. Finaliza a multiplicação
+        BEQ fim
+        LSRS R1, R1, #1  ;; deslocando para a direita. DICA: VISUALIZAR OS REGISTRADORES EM BINARIO
+        ITT CS ;;se o resultado do deslocamento subir um carry, (jogou para a direita um bit 1)
+          LSLCS R4, R0, R3 ;; vai salvar em R4 (aux) o valor de R0 deslocado em R3(valor do expoente)
+          ADDCS R2, R2, R4 ;; vai acrescer em R2 (resposta) o valor de R4 (aux)
+        ADD R3, R3, #1 ;; apos deslocar para direita, acrescenta 1 ao valor do exponte
+        B deslocamento ;;volta para a operação de deslocamento
+fim
+        POP {R1} ;;devolve o valor de R1 que estava salvo antes da função ser chamada
+        BX LR
+Loop
+        B Loop
         ;; main program ends here
 
 
