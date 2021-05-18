@@ -1,32 +1,27 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.50.9.278/W32 for ARM                  18/May/2021  00:05:36
+# IAR ELF Linker V8.50.9.278/W32 for ARM                  18/May/2021  15:38:58
 # Copyright 2007-2020 IAR Systems AB.
 #
 #    Output file  =
 #        C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\Labs\ELF52\Lab_1 -
-#        Copia\Projects\asm_example\Debug\Exe\asm_example.out
+#        microcontrolados\Labs\ELF52\Projeto_Final\Projects\asm_example\Debug\Exe\asm_example.out
 #    Map file     =
 #        C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\Labs\ELF52\Lab_1 -
-#        Copia\Projects\asm_example\Debug\List\asm_example.map
+#        microcontrolados\Labs\ELF52\Projeto_Final\Projects\asm_example\Debug\List\asm_example.map
 #    Command line =
-#        -f C:\Users\Giovani\AppData\Local\Temp\EW4455.tmp
+#        -f C:\Users\Giovani\AppData\Local\Temp\EWC93E.tmp
 #        ("C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\Labs\ELF52\Lab_1 -
-#        Copia\Projects\asm_example\Debug\Obj\asm.o"
+#        microcontrolados\Labs\ELF52\Projeto_Final\Projects\asm_example\Debug\Obj\asm.o"
 #        "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\Labs\ELF52\Lab_1 -
-#        Copia\Projects\asm_example\Debug\Obj\startup_TM4C1294.o"
+#        microcontrolados\Labs\ELF52\Projeto_Final\Projects\asm_example\Debug\Obj\startup_TM4C1294.o"
 #        --no_out_extension -o "C:\Users\Giovani\Desktop\Sexto Período
-#        CT\Sistemas microcontrolados\Labs\ELF52\Lab_1 -
-#        Copia\Projects\asm_example\Debug\Exe\asm_example.out" --redirect
-#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
-#        "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
-#        microcontrolados\Labs\ELF52\Lab_1 -
-#        Copia\Projects\asm_example\Debug\List\asm_example.map" --config
-#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        CT\Sistemas
+#        microcontrolados\Labs\ELF52\Projeto_Final\Projects\asm_example\Debug\Exe\asm_example.out"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map "C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas
+#        microcontrolados\Labs\ELF52\Projeto_Final\Projects\asm_example\Debug\List\asm_example.map"
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.4\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
 #        --no_library_search --entry __iar_program_start --vfe --text_out
 #        locale)
@@ -84,7 +79,7 @@ command line/config:
     ------------------------------------
     Total:
 
-C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab_1 - Copia\Projects\asm_example\Debug\Obj: [1]
+C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Projeto_Final\Projects\asm_example\Debug\Obj: [1]
     asm.o                   996
     startup_TM4C1294.o      962
     ------------------------------------
@@ -111,7 +106,7 @@ __vector_table                0x0        Data  Gb  startup_TM4C1294.o [1]
 __vector_table_0x1c          0x1c        Data  Gb  startup_TM4C1294.o [1]
 
 
-[1] = C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Lab_1 - Copia\Projects\asm_example\Debug\Obj
+[1] = C:\Users\Giovani\Desktop\Sexto Período CT\Sistemas microcontrolados\Labs\ELF52\Projeto_Final\Projects\asm_example\Debug\Obj
 
    1'958 bytes of readonly  code memory
   32'768 bytes of readwrite data memory
